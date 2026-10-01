@@ -1,0 +1,63 @@
+@import '@fontsource/outfit/300.css';
+@import '@fontsource/outfit/400.css';
+@import '@fontsource/outfit/600.css';
+@import '@fontsource/outfit/700.css';
+@import '@fontsource/fira-code/400.css';
+@import '@fontsource/fira-code/500.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0a0e1a;
+  --surface: #111827;
+  --surface-2: #1a2235;
+  --border: #1e2d42;
+  --border-hover: #2d4263;
+  --red: #e53935;
+  --red-dim: rgba(229, 57, 53, 0.12);
+  --cyan: #00bcd4;
+  --text: #e2e8f0;
+  --text-dim: #64748b;
+  --glow: 0 0 0 1px rgba(229, 57, 53, 0.4), 0 4px 24px rgba(229, 57, 53, 0.12);
+}
+
+* { box-sizing: border-box; }
+
+html, body { background: var(--bg); color: var(--text); }
+
+.mono { font-family: 'Fira Code', monospace; }
+
+/* Card hover glow */
+.card-hover {
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+.card-hover:hover {
+  border-color: var(--border-hover) !important;
+  box-shadow: 0 0 0 1px rgba(229, 57, 53, 0.2), 0 8px 32px rgba(0, 0, 0, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Fade-in stagger */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 0.4s ease both; }
+.fade-up-1 { animation-delay: 0.05s; }
+.fade-up-2 { animation-delay: 0.1s; }
+.fade-up-3 { animation-delay: 0.15s; }
+.fade-up-4 { animation-delay: 0.2s; }
+
+/* Pulse dot for "active" status */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+.pulse { animation: pulse-dot 1.6s ease-in-out infinite; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
