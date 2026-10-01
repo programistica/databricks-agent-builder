@@ -2,10 +2,6 @@
 
 Build, configure, and run tool-using AI agents on Databricks. The app combines a FastAPI service with a Next.js interface and uses Databricks Model Serving, Unity Catalog, AI Gateway, and MLflow.
 
-![Agent Builder interface](docs/images/agent-builder.png)
-
-*The Builder screen, shown with representative model, tool, and sub-agent entries.*
-
 ## What it does
 
 - Create agents with a model endpoint, system prompt, built-in or MCP tools, and other agents as sub-agents.
@@ -13,6 +9,28 @@ Build, configure, and run tool-using AI agents on Databricks. The app combines a
 - Browse agents, enabled tools, and Unity Catalog tables in the Catalog.
 - Store agent definitions and execution traces in the `agent_platform.v1` Unity Catalog schema.
 - Register agent versions and log runs with MLflow.
+
+## Screens
+
+The screenshots below use sample data.
+
+### Builder
+
+Define an agent: name, description, model endpoint, system prompt, tools, and sub-agents.
+
+![Builder screen](docs/images/builder.png)
+
+### Demo
+
+Chat with an agent and inspect each response's status, latency, and tool calls.
+
+![Demo screen](docs/images/demo.png)
+
+### Catalog
+
+Browse agents, enabled tools and MCP servers, and the Unity Catalog tables in the schema.
+
+![Catalog screen](docs/images/catalog.png)
 
 ## Architecture
 
